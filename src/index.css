@@ -1,13 +1,185 @@
+:root {
+  --text-shadow-color: #af9696;
+  --text-main-color: #9c1f1b;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "", "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(./wp2844161.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center bottom;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h3 {
+  color: whitesmoke;
+  font-family: "Rouge Script", cursive;
+  font-size: 70px;
+  font-weight: bold;
+  line-height: 48px;
+  margin: 0 0 50px;
+  text-align: center;
+  text-shadow: 1px 1px 2px var(--text-shadow-color),
+  3px 3px 2px var(--text-shadow-color),
+  4px 4px 2px var(--text-shadow-color),
+  5px 5px 2px var(--text-shadow-color);
+}
+
+p {
+  color: #ffffff;
+  font-family: "JetBrains Mono",monospace;
+  text-shadow: 0 0 11px rgba(114, 114, 114, 0.5), 0 0 10px rgba(80, 80, 80, 0.5);
+}
+
+.container {
+  position: fixed;
+  transform:translate(-50%, -50%);
+  text-align:center;
+  align-items:center;
+  display: flex;
+  justify-content:center;
+  flex-direction:column;
+  top: 50%;
+  left: 50%;
+}
+.timer__wrapper {
+  border-radius: 24px;
+  background-color:rgb(255, 205, 208);
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  transition:100ms ease-in-out;
+}
+
+.timer__wrapper:hover{
+  transform:scale(115%);
+  background-color:rgb(255, 166, 172);
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+
+.timer__display > p {
+  font-size: 3em;
+  padding: 15px;
+  transition: .3s;
+}
+
+.timer__wrapper:hover .timer__display p {
+  font-size: 3em;
+  padding: 15px;
+  text-shadow: 0 -1px 4px #FFF, 0 -2px 10px rgb(230, 230, 230),rgba(45, 35, 66, 0.4) 0 4px 8px;
+}
+
+.button__wrapper {
+  display: flex;
+  padding: 1em;
+  margin-left: 23px;
+  align-items: center;
+  gap: 1rem;
+}
+
+.button {
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+.button:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.button:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
+.button:disabled {
+  background-color: rgb(150, 0, 0);
+  color: #ffffff;
+}
+/* .button.active {
+  border: 1px solid var(--text-main-color);
+  background-color: var(--text-main-color);
+} */
+@media only screen and (max-device-width: 1280px) {
+  * {
+    font-size: 1em;
+  }
+  h1 {
+    font-size: 60px;
+    line-height: 0px;
+  }
+  .button__wrapper {
+    margin: auto;
+    width: 100%;
+  }
+  .timer__display > p {
+    font-size: 2em;
+    padding-left: 0;
+  }
+}
+
+
+.header {
+  padding: 30px;
+  text-align: center;
+  height: 15%;
+  width: 100%;
+  left:0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: rgb(207,58,73);
+background: linear-gradient(90deg, rgba(207,58,73,1) 0%, rgb(223, 44, 44) 50%, rgba(207,58,73,1) 100%);
+	text-align: center;
+	width: 100%;
+	height: auto;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	overflow: hidden;
+	border-radius: 0 0 85% 85% / 80%;
 }

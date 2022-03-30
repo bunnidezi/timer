@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { formatTime } from "./formatTime";
+import useTimer from "./useTimer";
 
 function App() {
+  const { time, startTimer, stopTimer, resetTimer, active } = useTimer(0);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+<>
+<div className="header"><h3>Coder Timer</h3></div>
+    <div className="App container">
+      <div className="timer__wrapper">
+        <div className="timer__display">
+        {/* {change time} */}
+          <p>{formatTime(time)}</p>
+        </div>
+        <div className="button__wrapper">
+          {/* {change button stop} */}
+          <button className="button" onClick={stopTimer}>
+            Stop
+          </button>
+          {/* { change button start} */}
+          <button
+            className="button"
+            ref={active}
+            onClick={startTimer}
+          >
+            Start
+          </button>
+          <button className="button" onClick={resetTimer}>
+            Reset
+          </button>
+        </div>
+      </div>
     </div>
+    </>
   );
 }
 
